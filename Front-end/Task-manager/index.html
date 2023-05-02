@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <title>Task-mgr</title>
+</head>
+<body>  
+    <nav class="navbar">
+        <a class="logo ">
+        <img class="logo--img" src="../assets/square-check-regular.svg" img>
+            Taskdo
+        </a>
+        <ul class="navbar navbar__lists">
+            <li class="navbar__lists navbar--My-tasks">
+                My-tasks
+            </li >
+            <li class="navbar__lists navbar--add_tasks"><button id= "add_tasks">Add task</button>  </li>
+        </ul>
+       
+    </nav>
+
+    <div class="task-card hidden">
+        <h2>Create Task</h2>
+        <form class="task-card--form">
+          <div class="form-group">
+            <label for="task-name">Task Name:</label>
+            <input type="text" class="task-name" placeholder="Enter task name" required>
+          </div>
+          <div class="task-name error hidden"></div>
+          
+          <div class="form-group">
+            <label for="task-desc">Description:</label>
+            <textarea class="task-desc" placeholder="Enter task description"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="task-status">Status:</label>
+            <select class="task-status">
+              <option value="open">Open</option>
+              <option value="close">Close</option>
+              <option value="inprogress">In Progress</option>
+            </select>
+          </div>
+          
+          <button class="create-btn">Create</button>
+          <button class="edit-btn hidden">Edit</button>
+        </form>
+      </div>
+
+
+<main class="tasks">
+
+ 
+</main>
+</body>
+<script src="script.js"></script>
+</html>

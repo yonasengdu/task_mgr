@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./../database/dev.db"
+}
+
+
+model task {
+  id        Int      @id @default(autoincrement())
+  name     String
+  status   String 
+  description String  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId   Int
+  user      user @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  
+  @@map("Tasks")
+}
+
+
+model user {
+  id               Int  @id @default(autoincrement())
+  full_name        String 
+  userName         String
+  email            String @unique
+  password_hash    String
+  tasks            task[] 
+
+}
+
